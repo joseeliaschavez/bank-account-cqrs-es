@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: "bank-account-command-api"
+server:
+  error:
+    include-message: always

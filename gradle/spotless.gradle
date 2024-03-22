@@ -1,0 +1,23 @@
+spotless {
+    java {
+        // optional: you can specify import groups directly
+        // note: you can use an empty string for all the imports you didn't specify explicitly, '|' to join group without blank line, and '\\#` prefix for static imports
+        importOrder('java|javax', 'com.rangerforge', '', '\\#com.rangerforge', '\\#')
+
+        removeUnusedImports()
+
+        // Will refactor your code, but it may break your style: apply it before your formatter
+        cleanthat()
+
+        // We're using Google's Java formatting rules
+        // Override the indent size to 4 spaces
+        googleJavaFormat()
+
+        indentWithTabs(2)
+        indentWithSpaces(4)
+
+        formatAnnotations() // fixes formatting of type annotations
+
+        licenseHeader '/* (C) $YEAR */' // or licenseHeaderFile
+    }
+}
