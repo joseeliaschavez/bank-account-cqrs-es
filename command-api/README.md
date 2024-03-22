@@ -1,7 +1,5 @@
 # Bank Account Command API
 
-![Github Actions Status](https://github.com/joseeliaschavez/bank-account-command-api/actions/workflows/gradle.yml/badge.svg?branch=develop&event=push)
-
 An example SpringBoot microservice showcasing the CQRS and Event Sourcing architecture patterns.
 This API accepts mutation events for mythical user bank accounts.
 
