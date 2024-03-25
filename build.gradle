@@ -22,4 +22,4 @@ def addDependenciesForTasks(taskNames, includedBuildNames) {
 
 addDependenciesForTasks(
         ["clean", "spotlessApply", "test"],
-        ["bank-common", "command-api", "query-api"])
+        ["cqrs-core", "bank-common", "command-api", "query-api"])
