@@ -20,4 +20,6 @@ def addDependenciesForTasks(taskNames, includedBuildNames) {
     }
 }
 
-addDependenciesForTasks(["clean", "spotlessApply", "test"], ["command-api", "query-api"])
+addDependenciesForTasks(
+        ["clean", "spotlessApply", "test"],
+        ["bank-common", "command-api", "query-api"])
