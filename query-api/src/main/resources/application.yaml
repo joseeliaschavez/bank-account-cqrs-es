@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: "bank-account-query-api"
+  datasource:
+    url: jdbc:h2:mem:bankaccount
+    username: sa
+    password:  # H2 doesn't require a password by default, you can leave it blank
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect  # Optional for JPA applications
+
+server:
+  error:
+    include-message: always
