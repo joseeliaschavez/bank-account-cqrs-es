@@ -10,8 +10,10 @@ plugins {
 
 tasks.named("clean") {
     dependsOn(gradle.includedBuild("command-api").task(":clean"))
+    dependsOn(gradle.includedBuild("query-api").task(":clean"))
 }
 
 tasks.named("test") {
     dependsOn(gradle.includedBuild("command-api").task(":test"))
+    dependsOn(gradle.includedBuild("query-api").task(":test"))
 }

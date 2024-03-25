@@ -7,3 +7,4 @@
 
 rootProject.name = "bank-account-cqrs-es"
 includeBuild("command-api")
+includeBuild("query-api")
