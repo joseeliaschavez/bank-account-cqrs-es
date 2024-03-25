@@ -15,6 +15,7 @@ on:
 
 permissions:
   contents: read
+  pull-requests: write
 
 jobs:
   build:
@@ -33,6 +34,7 @@ jobs:
       uses: gradle/actions/setup-gradle@v3
       with:
         gradle-version: wrapper
+        add-job-summary-as-pr-comment: on-failure
 
     - name: Build and Unit Test with Gradle
       run: gradle test
