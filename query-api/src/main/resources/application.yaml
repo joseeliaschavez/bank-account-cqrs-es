@@ -1,14 +1,43 @@
+server:
+  error:
+    include-message: always
+  port: 8082
+
 spring:
   application:
     name: "bank-account-query-api"
   datasource:
-    url: jdbc:h2:mem:bankaccount
+    url: jdbc:h2:mem:bankAccount
     username: sa
     password:  # H2 doesn't require a password by default, you can leave it blank
     driverClassName: org.h2.Driver
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect  # Optional for JPA applications
-
-server:
-  error:
-    include-message: always
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    url: jdbc:mysql://localhost:3306/bankAccount?createDatabaseIfNotExist=true
+    username: mysqluser
+    password:  secret
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect  # Optional for JPA applications
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  kafka:
+    listener:
+      ack-mode: MANUAL_IMMEDIATE
+    consumer:
+      bootstrap-servers: "localhost:9092"
+      group-id: 'bankAccountConsumer'
+      auto-offset-reset: earliest
+      key-serializer: 'org.apache.kafka.serialization.StringSerializer'
+      value-serializer: 'org.springframework.kafka.support.serializer.JsonSerializer'
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: '*'

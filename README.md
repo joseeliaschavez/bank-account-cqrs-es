@@ -4,6 +4,18 @@
 
 An example Gradle multi-project showcasing the CQRS and Event Sourcing architecture patterns.
 
+## Port Configuration
+
+| Service     | Port  | Docker Port |
+|-------------|-------|-------------|
+| command-api | 8081  | -           |
+| query-api   | 8082  | -           |
+| Kafka       | 9092  | 9092        |
+| Mongo       | 27017 | 27017       |
+| MExpress    | 8083  | 8081        |
+| MySQL       | 3306  | 3306        |
+| Adminer     | 8084  | 8080        |
+
 ## Resources
 
 - Gradle
