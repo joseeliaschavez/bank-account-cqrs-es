@@ -5,9 +5,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BankAccountApplication {
+public class QueryApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(BankAccountApplication.class, args);
+        SpringApplication.run(QueryApplication.class, args);
     }
 }
