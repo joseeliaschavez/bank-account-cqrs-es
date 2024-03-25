@@ -4,16 +4,20 @@
  * This is a general purpose Gradle build.
  * To learn more about Gradle by exploring our Samples at https://docs.gradle.org/8.6/samples
  */
+
 plugins {
-    id("java")
+    id "java"
+    id "com.diffplug.spotless" version "6.25.0"
 }
 
-tasks.named("clean") {
-    dependsOn(gradle.includedBuild("command-api").task(":clean"))
-    dependsOn(gradle.includedBuild("query-api").task(":clean"))
+def addDependenciesForTasks(taskNames, includedBuildNames) {
+    taskNames.each { taskName ->
+        tasks.named(taskName) {
+            includedBuildNames.each { includedBuildName ->
+                dependsOn(gradle.includedBuild(includedBuildName).task(":${taskName}"))
+            }
+        }
+    }
 }
 
-tasks.named("test") {
-    dependsOn(gradle.includedBuild("command-api").task(":test"))
-    dependsOn(gradle.includedBuild("query-api").task(":test"))
-}
+addDependenciesForTasks(["clean", "spotlessApply", "test"], ["command-api", "query-api"])
