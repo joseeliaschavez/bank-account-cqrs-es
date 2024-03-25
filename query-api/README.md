@@ -1,7 +1,5 @@
 # bank-account-query-api
 
-![Github Actions Status](https://github.com/joseeliaschavez/bank-account-query-api/actions/workflows/gradle.yml/badge.svg?branch=develop&event=push)
-
 An example SpringBoot microservice showcasing the CQRS and Event Sourcing architecture patterns.
 This API accepts read queries for mythical user bank accounts.
 
