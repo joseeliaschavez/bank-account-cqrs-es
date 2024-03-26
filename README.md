@@ -16,6 +16,11 @@ An example Gradle multi-project showcasing the CQRS and Event Sourcing architect
 | MySQL       | 3306  | 3306        |
 | Adminer     | 8084  | 8080        |
 
+## Gradle Notes
+
+1. In `settings.gradle`, the `include` method is used to include the subprojects. This is the recommended way to include subprojects in a multi-project build. Using the `includeBuild` method is for composite builds.
+2. The use of `allprojects` and `subprojects` is now discouraged. Instead, define plugins and dependencies in the subprojects themselves.
+
 ## Resources
 
 - Gradle

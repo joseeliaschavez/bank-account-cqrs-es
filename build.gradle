@@ -6,20 +6,19 @@
  */
 
 plugins {
-    id "java"
-    id "com.diffplug.spotless" version "6.25.0"
+    id 'java'
+    id 'com.diffplug.spotless' version "${spotlessVersion}"
 }
 
-def addDependenciesForTasks(taskNames, includedBuildNames) {
-    taskNames.each { taskName ->
-        tasks.named(taskName) {
-            includedBuildNames.each { includedBuildName ->
-                dependsOn(gradle.includedBuild(includedBuildName).task(":${taskName}"))
-            }
-        }
+apply from: 'gradle/spotless.gradle'
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    sourceCompatibility = "${javaVersion}"
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(javaVersion)
     }
 }
-
-addDependenciesForTasks(
-        ["clean", "spotlessApply", "test"],
-        ["cqrs-core", "bank-common", "command-api", "query-api"])
