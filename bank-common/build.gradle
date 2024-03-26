@@ -35,6 +35,9 @@ dependencies {
 	// Lombok
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+
+	// CQRS Core
+	implementation project(":cqrs-core")
 }
 
 test {
