@@ -38,8 +38,8 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
 
     // CQRS Core
-//    implementation 'com.rangerforce:bank-account-cqrs-core'
     implementation project(":cqrs-core")
+    implementation project(":bank-common")
 
     // Spring Test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
