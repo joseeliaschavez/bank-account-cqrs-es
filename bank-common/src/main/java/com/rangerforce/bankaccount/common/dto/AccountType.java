@@ -2,6 +2,6 @@
 package com.rangerforce.bankaccount.common.dto;
 
 public enum AccountType {
+    CHECKING,
     SAVINGS,
-    CURRENT
 }

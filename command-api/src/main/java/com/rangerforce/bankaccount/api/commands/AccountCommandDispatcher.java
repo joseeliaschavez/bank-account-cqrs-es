@@ -23,7 +23,7 @@ public class AccountCommandDispatcher implements CommandDispatcher {
         @SuppressWarnings("unchecked")
         CommandHandlerMethod<T> handler = (CommandHandlerMethod<T>) routes.get(command.getClass());
         if (Objects.isNull(handler)) {
-            throw new CommandException("No handler registered for " + command.getClass().getName());
+            throw new CommandException("No handler registered for " + command.getClass().getSimpleName());
         }
         handler.handle(command);
     }

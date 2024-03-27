@@ -3,13 +3,15 @@ package com.rangerforce.bankaccount.api.commands;
 
 import com.rangerforce.bankaccount.common.dto.AccountType;
 import com.rangerforce.bankaccount.cqrs.commands.BaseCommand;
-import lombok.Data;
+import lombok.Builder;
 import lombok.EqualsAndHashCode;
+import lombok.Value;
 
-@EqualsAndHashCode(callSuper = false)
-@Data
+
+@EqualsAndHashCode(callSuper = true)
+@Value
 public class OpenAccountCommand extends BaseCommand {
-    private String accountHolder;
-    private AccountType accountType;
-    private double openingBalance;
+    String accountHolder;
+    AccountType accountType;
+    double openingBalance;
 }

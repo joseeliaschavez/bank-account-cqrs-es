@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'groovy' // Necessary to compile and run Spock Groovy tests
     id 'org.springframework.boot' version '3.2.4'
     id 'io.spring.dependency-management' version '1.1.4'
     id "com.diffplug.spotless" version "${spotlessVersion}"
@@ -44,6 +45,10 @@ dependencies {
     // Spring Test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.kafka:spring-kafka-test'
+
+    // Spock Framework
+    testImplementation "org.spockframework:spock-core:${spockVersion}"
+    testImplementation "org.spockframework:spock-spring:${spockVersion}"
 }
 
 test {
