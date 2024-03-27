@@ -1,6 +1,6 @@
 # Bank Account App: CQRS and Event Sourcing
 
-![Github Actions Status](https://github.com/joseeliaschavez/bank-account-command-api/actions/workflows/gradle.yml/badge.svg?branch=develop&event=push)
+![Github Actions Status](https://github.com/joseeliaschavez/bank-account-cqrs-es/actions/workflows/gradle.yml/badge.svg?branch=develop&event=push)
 
 An example Gradle multi-project showcasing the CQRS and Event Sourcing architecture patterns.
 
