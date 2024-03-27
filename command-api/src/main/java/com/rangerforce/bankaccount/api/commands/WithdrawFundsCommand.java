@@ -2,11 +2,11 @@
 package com.rangerforce.bankaccount.api.commands;
 
 import com.rangerforce.bankaccount.cqrs.commands.BaseCommand;
-import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Value;
 
-@EqualsAndHashCode(callSuper = false)
-@Data
+@EqualsAndHashCode(callSuper = true)
+@Value
 public class WithdrawFundsCommand extends BaseCommand {
-    private double amount;
+    double amount;
 }
