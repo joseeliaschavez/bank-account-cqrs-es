@@ -32,7 +32,7 @@ class AccountCommandDispatcherSpec extends Specification {
         e.message == "No handler registered for OpenAccountCommand"
     }
 
-    def "should dispatch #command.class.simpleName to the correct handler"() {
+    def "should dispatch #name to the correct handler"() {
         given:
         def handler = Mock(CommandHandlerMethod)
         def dispatcher = new AccountCommandDispatcher()
@@ -51,5 +51,6 @@ class AccountCommandDispatcherSpec extends Specification {
                 new DepositFundsCommand(1000.0),
                 new WithdrawFundsCommand(500.0)
         ]
+        name = command.class.simpleName
     }
 }
